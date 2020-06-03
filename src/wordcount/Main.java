@@ -49,5 +49,10 @@ public class Main
 
 		System.out.println("after sort " + sortedList.get(0).getValue()+ " " +sortedList.get(0).getKey());
 
+		for(int i = 0; i < 50; i++)
+		{
+			System.out.println("Common Word " + sortedList.get(i).getKey()+ " is seen " +sortedList.get(i).getValue()+" times");
+		}
+
 	}
 }
