@@ -43,8 +43,11 @@ public class Main
 		    // System.out.println("Key is " + wordsMap.get(4));
 		// }
 		List<HashMap.Entry> sortedList = new ArrayList<>(wordsMap.entrySet());
-		// sortedMap.sort(Comparator.comparing(o -> ((String)o.getValue())));
-		    System.out.println("Key is " + sortedList.get(5).getValue()+sortedList.get(5).getKey());
+		System.out.println("before sort " + sortedList.get(0).getValue()+ " " +sortedList.get(0).getKey());
+
+		sortedList.sort(Comparator.comparing(o -> (int) o.getValue(), Comparator.reverseOrder()));
+
+		System.out.println("after sort " + sortedList.get(0).getValue()+ " " +sortedList.get(0).getKey());
 
 	}
 }
