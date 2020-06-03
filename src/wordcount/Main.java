@@ -20,24 +20,31 @@ public class Main
 		String[] words = unText.split(" +");
 		// System.out.print(words[0]);
 
-		Map<Integer, String> wordsMap = new HashMap<>();
-		int hashcount = 1;
+		Map<String, Integer> wordsMap = new HashMap<>();
+		// int hashcount = 0;
 		for(String w : words)
 		{
-			wordsMap.put(hashcount, w);
+			if(wordsMap.containsKey(w))
+			{
+				wordsMap.put(w, wordsMap.get(w) + 1);
+			}else
+			{
+				wordsMap.put(w, 1);
+			}
+			// wordsMap.put(w, hashcount);
+			// hashcount++;
         }
-        for (HashMap.Entry mapElem : wordsMap.entrySet())
-        {
-			int stop = 0;
-			if (stop < 10)
-			{	
-			    System.out.print("Key is " + mapElem.getKey());
-			    System.out.print(" Value is " + mapElem.getValue());
-			    stop++;
-			}
-			else {
-				break;
-			}
-		}
+
+  //       for (HashMap.Entry mapElem : wordsMap.entrySet())
+  //       {
+		    System.out.println("Key is " + wordsMap.get("PREAMBLE"));
+		    System.out.println("not Key is " + wordsMap.size());
+		    // System.out.println("Key is " + wordsMap.get(3));
+		    // System.out.println("Key is " + wordsMap.get(4));
+		// }
+		List<HashMap.Entry> sortedList = new ArrayList<>(wordsMap.entrySet());
+		// sortedMap.sort(Comparator.comparing(o -> ((String)o.getValue())));
+		    System.out.println("Key is " + sortedList.get(5).getValue()+sortedList.get(5).getKey());
+
 	}
 }
