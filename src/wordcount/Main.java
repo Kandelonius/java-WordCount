@@ -34,7 +34,7 @@ public class Main
 			// wordsMap.put(w, hashcount);
 			// hashcount++;
         }
-
+        int globalNum = 500;
   //       for (HashMap.Entry mapElem : wordsMap.entrySet())
   //       {
 		    System.out.println("Key is " + wordsMap.get("PREAMBLE"));
@@ -42,17 +42,21 @@ public class Main
 		    // System.out.println("Key is " + wordsMap.get(3));
 		    // System.out.println("Key is " + wordsMap.get(4));
 		// }
-		List<HashMap.Entry> sortedList = new ArrayList<>(wordsMap.entrySet());
+		List<HashMap.Entry> sortedList = new ArrayList<>(wordsMap.entrySet());// for first list of 50
+		List<HashMap.Entry> sortedListABC = new ArrayList<>(wordsMap.entrySet());// for alphabetized list
 		System.out.println("before sort " + sortedList.get(0).getValue()+ " " +sortedList.get(0).getKey());
 
 		sortedList.sort(Comparator.comparing(o -> (int) o.getValue(), Comparator.reverseOrder()));
+		// sortedListABC.sort(Comparator.comparing(o -> (int) o.getValue(), Comparator.reverseOrder()));
 
 		System.out.println("after sort " + sortedList.get(0).getValue()+ " " +sortedList.get(0).getKey());
 
 		for(int i = 0; i < 50; i++)
 		{
 			System.out.println("Common Word " + sortedList.get(i).getKey()+ " is seen " +sortedList.get(i).getValue()+" times");
+			sortedListABC.add(sortedList.get(i));
 		}
-
+		System.out.println("\nIn ABC ArrayList " + sortedListABC.get(globalNum).getKey()+ " is seen " +sortedListABC.get(globalNum).getValue()+" times");
+		System.out.println("hello " + sortedListABC.get(globalNum));
 	}
 }
